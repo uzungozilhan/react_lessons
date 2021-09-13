@@ -26,7 +26,7 @@ export default class Counter extends Component {
 
     shouldComponentUpdate() {
         console.log("Should update???");
-        return true; //true olursa update'e izin verir.
+        return true; //true olursa update'e izin verir; false olursa izin vermez.
     }
 
     componentDidMount = () => {

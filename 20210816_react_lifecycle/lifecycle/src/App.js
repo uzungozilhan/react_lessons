@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-       show:true
+       show:true //false olduğunda counter ekrandan kayboluyor.
     }
   }
   hide=()=>{
