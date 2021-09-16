@@ -22,27 +22,7 @@ const validationSchema=Yup.object({
     .required("Required.Enter email address")
 })
 function SimpleRegister() {
-    const formik=useFormik({ 
-        initialValues,
-        onSubmit,
-        validationSchema
-        // validate:values=>{
-        //     let errors={}
-        //     if (!values.name){
-        //         errors.name="Required.Please fill  area"
-        //     }
-        //     if (!values.email){
-        //         errors.email="Required.Please fill area"
-        //     }
-        //     else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-        //        errors.email = 'Invalid email address';}
-        //     if (!values.userName){
-        //         errors.userName="Required.Please fill  area"
-        //     }
-        //     return errors
-        // }
-    })
-    console.log("formik:",formik)
+    
     return (
         <div className="container">
             <h1>Simple Form</h1>
