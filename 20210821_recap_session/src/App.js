@@ -1,23 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import ClassBased from './ClassBased';
+import Functional from './Functional';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      HEY!
+      {/* <ClassBased name= "İlhan" surname="Uzungöz"/> */}
+      <Functional/>
     </div>
   );
 }
