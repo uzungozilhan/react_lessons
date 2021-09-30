@@ -9,8 +9,8 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={()=> setVisible(!isVisible)}>Toggle</button>
-      {true && <ClassComponent />}
+      {/* <button onClick={()=> setVisible(!isVisible)}>Toggle</button> */}
+      {false && <ClassComponent />}
       {/* <ClassComponent /> */}
       {isVisible ? <FunctionalComponent/> : null}
       {/* <FunctionalComponent/> */}
