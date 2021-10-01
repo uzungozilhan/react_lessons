@@ -1,6 +1,7 @@
 import { useState } from "react";
 import StudentList from "./components/StudentList";
 import { StudentContext } from "./context/StudentContext";
+
 const data = [
   {
     id: 1,
