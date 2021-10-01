@@ -19,11 +19,11 @@ function App() {
   const [img, setImg] = useState(null);
 
   const [users, setUsers] = useState([]);
-  // console.log('users:', users)
+  console.log('users:', users)
   const [text, setText] = useState("");
-  // console.log('text: ', text)
+  console.log('text: ', text)
   const [search, setSearch] = useState("");
-  // console.log('search:', search)
+  console.log('search:', search)
 
   const increase = () => {
     setCount(count+1);
@@ -49,15 +49,17 @@ function App() {
   return (
     <div className="App">
       {/* <UseRefComponent/> */}
-      {/* <Header img={img} />
+      <Header img={img} />
       <p>Count: {count}</p>
       <button onClick={increase}>Increase</button>
       <button onClick={() => setImg(fs)}>FS</button>
-      <button onClick={() => setImg(aws)}>AWS</button> */}
+      <button onClick={() => setImg(aws)}>AWS</button>
+      <button onClick={() => setImg('')}>Reset</button>
       <br />
       <input ref={inputRef} onChange={() => setText(inputRef.current.value)} />
       <button onClick={handleSearch}>Search User</button>
-      <Users users={filteredUsers} add={addUser}/>
+      <hr/>
+      <Users users={filteredUsers} add={addUser} />
 
 
     </div>

@@ -13,7 +13,6 @@ import cw from "../assets/cw_logo.png";
 //     </div>
 //   );
 // });
-
 // export default Header;
 
 // const Header = ({ img }) => {
@@ -28,7 +27,6 @@ import cw from "../assets/cw_logo.png";
 //     </div>
 //   );
 // };
-
 // export default React.memo(Header);
 
 const Header = ({ img }) => {
