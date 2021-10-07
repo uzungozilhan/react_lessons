@@ -1,24 +1,40 @@
-import React from 'react';
-import "./App.css";
-import ComponentA from './components/ComponentA';
-import ComponentB from './components/ComponentB';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import reducer from './redux/reducer';
-import initialState from './redux/store';
+import { useState } from "react";
+import { ToastContainer } from "react-toastify";
+import Contacts from "./components/contacts/Contacts";
+import FormComponent from "./components/form/Form";
+import { addInfo, editHandler } from "./utils/functions";
 
-const store = createStore(reducer, initialState);
+const initialState = { username: "", phoneNumber: "", gender: "NO INFO" };
 
-const App = () => {
+function App() {
+  const [info, setInfo] = useState(initialState);
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if(info?.id){
+      editHandler(info)
+    }else{
+      addInfo(info)
+    }
+    setInfo(initialState)
+  };
+
+  const updateFormHandler = (item) => {
+    setInfo({...item})
+  }
+
   return (
-    <Provider store={store}>
-      <div className='App'>
-        <h1>Clarus TEST</h1>
-        <ComponentA />
-        <ComponentB/>
-      </div>
-    </Provider>
-  )
+    <div className="App">
+      <FormComponent
+        handleFormSubmit={handleFormSubmit}
+        className="form"
+        info={info}
+        setInfo={setInfo}
+      />
+      <Contacts className="contacts" updateFormHandler={updateFormHandler} />
+      <ToastContainer />
+    </div>
+  );
 }
 
-export default App
+export default App;
