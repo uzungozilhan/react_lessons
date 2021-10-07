@@ -1,39 +1,24 @@
-import { useReducer } from 'react'
-import {reducer, initialState} from './reducer';
+import React from 'react';
+import "./App.css";
+import ComponentA from './components/ComponentA';
+import ComponentB from './components/ComponentB';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducer from './redux/reducer';
+import initialState from './redux/store';
 
+const store = createStore(reducer, initialState);
 
-function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  console.log('state: ', state)
-
-  const {data, loading, error} = state;
-
-  // const [data, setData] = useState('')
-  // const [loading, setLoading] = useState(false)
-  // const [error, setError] = useState('')
-
-  const fetchData = () => {
-    dispatch({type: 'FETCH_START'})
-
-    fetch('https://api.thecatapi.com/v1/images/search')
-      .then((res) => res.json())
-      .then((res) => {
-        dispatch({type: 'FETCH_SUCCESS', payload: res[0].url});
-      })
-      .catch(() => {
-        dispatch({type: 'FETCH_FAIL', payload: 'Something went wrong!'});
-      })
-  }
-
+const App = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <button onClick={fetchData} disabled={loading} style={{ width: '100px', margin: '1rem' }}>
-        Fetch Data
-      </button>
-      {data && <img src={data} alt="cat-img" />}
-      {error && <p>{error}</p>}
-    </div>
+    <Provider store={store}>
+      <div className='App'>
+        <h1>Clarus TEST</h1>
+        <ComponentA />
+        <ComponentB/>
+      </div>
+    </Provider>
   )
 }
 
-export default App;
+export default App
