@@ -31,8 +31,8 @@ function App() {
         info={info}
         setInfo={setInfo}
       />
-      <Contacts className="contacts" updateFormHandler={updateFormHandler} />
-      <ToastContainer />
+      {/* <Contacts className="contacts" updateFormHandler={updateFormHandler} /> */}
+      {/* <ToastContainer /> */}
     </div>
   );
 }
