@@ -1,5 +1,6 @@
 import { Button, Form, Grid, Segment } from "semantic-ui-react";
 import { options } from "../../utils/constants";
+
 const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
 
   const handleInputChange = (e) => {

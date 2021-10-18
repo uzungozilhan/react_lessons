@@ -1,7 +1,6 @@
 import { Button, Form, Grid, Segment } from "semantic-ui-react";
 import { options } from "../../utils/constants";
 
-
 const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
 
   const handleInputChange = (e) => {
@@ -15,8 +14,9 @@ const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
     const { name, value } = result;
     setInfo({ ...info, [name]: value.toUpperCase() });
   };
+
   return (
-    <Grid textAlign='center' verticalAlign='middle'>
+    <Grid textAlign="center" verticalAlign="middle">
       <Grid.Column style={{ width: "300px" }}>
         <div className="ui pilled segment">
           <div className="ui pilled brand">
@@ -32,7 +32,7 @@ const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
           </div>
         </div>
         <h2 className="contact-header">Addd Contact</h2>
-        <Form size="large" >
+        <Form size="large" onSubmit={handleFormSubmit}>
           <Segment stacked>
             <Form.Input
               fluid
@@ -71,9 +71,9 @@ const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
             </Button>
           </Segment>
         </Form>
-        </Grid.Column>
+      </Grid.Column>
     </Grid>
-  )
-}
+  );
+};
 
 export default FormComponent;
